@@ -15,7 +15,7 @@ concurrency:
   cancel-in-progress: false
 
 permissions:
-  contents: write           # commit de datos/agenda.json
+  contents: read            # solo leer el repo; nada que escribir
   pages: write              # publicar el sitio
   id-token: write           # lo exige deploy-pages
 
@@ -45,21 +45,9 @@ jobs:
           BLOQUENEON_ICS_URL: ${{ secrets.BLOQUENEON_ICS_URL }}
         run: node scripts/sincronizar.mjs
 
-      - name: Guardar la agenda si cambió
-        run: |
-          if git diff --quiet -- datos/agenda.json; then
-            echo "Sin cambios en la agenda."
-            exit 0
-          fi
-          git config user.name  "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add datos/agenda.json
-          git commit -m "Agenda actualizada"
-          git push
-
-      # Publicamos explícitamente en vez de confiar en que el commit del bot
-      # dispare la reconstrucción de Pages: los commits hechos con GITHUB_TOKEN
-      # no disparan workflows de forma fiable.
+      # datos/agenda.json queda escrito en el directorio de trabajo y se sube
+      # dentro del artefacto. No le hacemos commit: el que está en el repo es
+      # solo un marcador para poder trabajar en local.
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

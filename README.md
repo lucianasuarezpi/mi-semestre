@@ -11,7 +11,7 @@ navegador del celular.
    GitHub Action (cada hora)
       │  lee los secretos: NOTION_TOKEN, NOTION_DB_ID, BLOQUENEON_ICS_URL
       ▼
-   datos/agenda.json ──commit──▶ repo ──▶ GitHub Pages
+   datos/agenda.json ─────────────────▶ GitHub Pages
                                               │
                               tu celular ◀────┘
                               (las notas se guardan aquí)
@@ -163,7 +163,7 @@ calculo.js                            aritmética de notas (sin DOM, testeable)
 almacenamiento.js                     lo único que sabe dónde viven las notas
 sw.js · manifest.webmanifest          lo que la hace instalable y offline
 datos/semestre.json                   los syllabus, a mano
-datos/agenda.json                     lo escribe la Action
+datos/agenda.json                     marcador; la Action lo regenera al publicar
 scripts/sincronizar.mjs               Notion + iCal
 scripts/probar.mjs                    pruebas de terminal
 .github/workflows/sincronizar.yml     el cron y la publicación
