@@ -1,0 +1,227 @@
+{
+  "_comentario": "Datos extraídos de los seis programas del semestre. Editable a mano. Los pesos de 'evaluacion' deben sumar 100 (los items con bono:true no cuentan). 'dia' va de 1=lunes a 7=domingo.",
+  "periodo": "2026-20",
+  "etiqueta": "Tercer semestre",
+  "inicio": "2026-08-03",
+  "fin": "2026-12-05",
+  "escala": { "min": 1.5, "max": 5.0, "aprueba": 3.0, "decimales": 1 },
+  "receso": { "inicio": "2026-09-28", "fin": "2026-10-03" },
+  "hitos": [
+    { "fecha": "2026-08-03", "titulo": "Inicio de clases", "tipo": "info" },
+    { "fecha": "2026-08-07", "titulo": "Festivo — Batalla de Boyacá", "tipo": "festivo" },
+    { "fecha": "2026-08-17", "titulo": "Festivo", "tipo": "festivo" },
+    { "fecha": "2026-09-28", "titulo": "Inicia semana de receso", "tipo": "receso" },
+    { "fecha": "2026-10-03", "titulo": "Termina semana de receso", "tipo": "receso" },
+    { "fecha": "2026-10-09", "titulo": "Último día para que los profesores reporten el 30%", "tipo": "info" },
+    { "fecha": "2026-10-23", "titulo": "Último día para retiros — 6:00 p.m.", "tipo": "critico" },
+    { "fecha": "2026-11-09", "titulo": "Primer día de evaluación de cursos y profesores", "tipo": "info" },
+    { "fecha": "2026-11-30", "titulo": "Inician exámenes finales", "tipo": "critico" },
+    { "fecha": "2026-12-05", "titulo": "Último día de exámenes finales", "tipo": "critico" }
+  ],
+  "materias": [
+    {
+      "id": "calculo",
+      "nombre": "Cálculo Integral y Ecuaciones Diferenciales",
+      "corto": "Cálculo Integral",
+      "codigo": "MATE-1214",
+      "carpeta": "Cálculo Integral y Ecuaciones Diferenciales",
+      "departamento": "Matemáticas",
+      "texto": "Stewart — Calculus: Single Variable, Early Transcendentals (6ª ed.)",
+      "horario": [{ "dia": 2 }, { "dia": 4 }],
+      "evaluacion": [
+        { "rubro": "Examen Parcial 1", "peso": 20 },
+        { "rubro": "Examen Parcial 2", "peso": 20 },
+        { "rubro": "Examen Parcial 3", "peso": 20 },
+        { "rubro": "Examen Final", "peso": 25 },
+        { "rubro": "Sección complementaria", "peso": 15 }
+      ],
+      "eventos": [
+        { "fecha": "2026-08-25", "titulo": "Examen Parcial 1", "tipo": "parcial", "rubro": "Examen Parcial 1" },
+        { "fecha": "2026-09-24", "titulo": "Examen Parcial 2", "tipo": "parcial", "rubro": "Examen Parcial 2" },
+        { "fecha": "2026-11-10", "titulo": "Examen Parcial 3", "tipo": "parcial", "rubro": "Examen Parcial 3" },
+        { "fecha": "2026-11-26", "titulo": "Examen Final (último día de clase)", "tipo": "final", "rubro": "Examen Final" }
+      ]
+    },
+    {
+      "id": "algebra",
+      "nombre": "Álgebra Lineal",
+      "corto": "Álgebra Lineal",
+      "codigo": "MATE-1105",
+      "carpeta": "Álgebra Lineal",
+      "departamento": "Matemáticas",
+      "profesor": { "nombre": "Liliana Garrido", "correo": "bgarrido@uniandes.edu.co" },
+      "atencion": "Miércoles 10:00–10:50 a.m. · Pentágono",
+      "texto": "Winklmeier — Notas de clase Álgebra Lineal (es / en)",
+      "horario": [],
+      "evaluacion": [
+        { "rubro": "Examen Parcial 1", "peso": 25 },
+        { "rubro": "Examen Parcial 2", "peso": 25 },
+        { "rubro": "Examen Final unificado", "peso": 30 },
+        { "rubro": "Quices en Bloque Neón", "peso": 20 }
+      ],
+      "eventos": [
+        { "fecha": "2026-09-11", "titulo": "Examen Parcial 1", "tipo": "parcial", "rubro": "Examen Parcial 1" },
+        { "fecha": "2026-10-23", "titulo": "Examen Parcial 2", "tipo": "parcial", "rubro": "Examen Parcial 2" },
+        { "fecha": "2026-11-30", "titulo": "Examen Final unificado (semana 17)", "tipo": "final", "rubro": "Examen Final unificado", "impreciso": true }
+      ]
+    },
+    {
+      "id": "fisica",
+      "nombre": "Física 1",
+      "corto": "Física 1",
+      "codigo": "FISI-1518",
+      "seccion": "A",
+      "carpeta": "Física 1",
+      "departamento": "Física",
+      "profesor": { "nombre": "Alejandra Catalina Valencia González", "correo": "ac.valencia@uniandes.edu.co", "oficina": "IP_308" },
+      "salon": "B-202",
+      "horario": [
+        { "dia": 2, "inicio": "06:30", "fin": "07:50", "salon": "B-202" },
+        { "dia": 4, "inicio": "06:30", "fin": "07:50", "salon": "B-202" }
+      ],
+      "texto": "Young & Freedman — Física Universitaria Vol. 1 (Sears–Zemansky, 13ª ed.)",
+      "evaluacion": [
+        { "rubro": "Evaluación 1", "peso": 11.25 },
+        { "rubro": "Evaluación 2", "peso": 11.25 },
+        { "rubro": "Evaluación 3", "peso": 11.25 },
+        { "rubro": "Evaluación 4", "peso": 11.25 },
+        { "rubro": "Examen Final", "peso": 25 },
+        { "rubro": "Laboratorio de Física Experimental I", "peso": 15 },
+        { "rubro": "Sección complementaria de problemas", "peso": 15 }
+      ],
+      "eventos": [
+        { "fecha": "2026-08-25", "titulo": "Evaluación 1", "tipo": "parcial", "rubro": "Evaluación 1" },
+        { "fecha": "2026-09-15", "titulo": "Evaluación 2", "tipo": "parcial", "rubro": "Evaluación 2" },
+        { "fecha": "2026-10-15", "titulo": "Evaluación 3", "tipo": "parcial", "rubro": "Evaluación 3" },
+        { "fecha": "2026-11-12", "titulo": "Evaluación 4", "tipo": "parcial", "rubro": "Evaluación 4" },
+        { "fecha": "2026-11-26", "titulo": "Repaso para el examen final", "tipo": "clase" },
+        { "fecha": "2026-11-30", "titulo": "Examen Final (la fecha la fija Admisiones y Registro)", "tipo": "final", "rubro": "Examen Final", "impreciso": true }
+      ],
+      "nota": "Nota mínima aprobatoria 3,0 / 5,0. Se reporta con una cifra decimal."
+    },
+    {
+      "id": "fafi",
+      "nombre": "Fundamentos de Analítica Financiera",
+      "corto": "FAFI",
+      "carpeta": "Fundamentos de Analítica Financiera",
+      "seccion": "3",
+      "profesor": { "nombre": "Juan Camilo Cerón Castañeda", "correo": "j.ceronc@uniandes.edu.co" },
+      "asistente": { "nombre": "Tomás Otálora Díaz", "correo": "t.otalora@uniandes.edu.co" },
+      "correoCurso": "cursofafi@uniandes.edu.co",
+      "salon": "Centro Cívico (RGD) · RGD_202",
+      "horario": [
+        { "dia": 2, "inicio": "08:00", "fin": "09:20", "salon": "RGD_202" },
+        { "dia": 4, "inicio": "08:00", "fin": "09:20", "salon": "RGD_202" }
+      ],
+      "evaluacion": [
+        { "rubro": "Examen Parcial I", "peso": 20 },
+        { "rubro": "Examen Parcial II", "peso": 20 },
+        { "rubro": "Caso de Aplicación — entrega 1", "peso": 6 },
+        { "rubro": "Caso de Aplicación — entrega 2", "peso": 16 },
+        { "rubro": "Taller 1", "peso": 6 },
+        { "rubro": "Taller 2", "peso": 6 },
+        { "rubro": "Taller 3", "peso": 6 },
+        { "rubro": "Actividades Magistrales (10)", "peso": 20 }
+      ],
+      "eventos": [
+        { "fecha": "2026-08-18", "hora": "08:00", "titulo": "Se publica el Taller 1", "tipo": "publicacion" },
+        { "fecha": "2026-08-30", "hora": "23:59", "titulo": "Entrega Taller 1", "tipo": "entrega", "rubro": "Taller 1" },
+        { "fecha": "2026-08-31", "hora": "08:00", "titulo": "Se publica el Taller 2", "tipo": "publicacion" },
+        { "fecha": "2026-09-20", "hora": "23:59", "titulo": "Entrega Taller 2", "tipo": "entrega", "rubro": "Taller 2" },
+        { "fecha": "2026-09-22", "titulo": "Examen Parcial I — parte 1 (en papel)", "tipo": "parcial", "rubro": "Examen Parcial I" },
+        { "fecha": "2026-09-24", "titulo": "Examen Parcial I — parte 2 (Bloque Neón)", "tipo": "parcial" },
+        { "fecha": "2026-10-05", "hora": "08:00", "titulo": "Se publica el Taller 3", "tipo": "publicacion" },
+        { "fecha": "2026-10-25", "hora": "23:59", "titulo": "Entrega Taller 3", "tipo": "entrega", "rubro": "Taller 3" },
+        { "fecha": "2026-10-27", "titulo": "Examen Parcial II — parte 1", "tipo": "parcial", "rubro": "Examen Parcial II" },
+        { "fecha": "2026-10-29", "titulo": "Examen Parcial II — parte 2 (Bloque Neón)", "tipo": "parcial" },
+        { "fecha": "2026-10-30", "hora": "08:00", "titulo": "Se publica el Caso de Aplicación", "tipo": "publicacion" },
+        { "fecha": "2026-11-08", "hora": "23:59", "titulo": "Caso de Aplicación — entrega 1 (Excel + resumen ejecutivo)", "tipo": "entrega", "rubro": "Caso de Aplicación — entrega 1" },
+        { "fecha": "2026-11-30", "titulo": "Caso de Aplicación — sustentación (semana de finales)", "tipo": "final", "rubro": "Caso de Aplicación — entrega 2", "impreciso": true }
+      ],
+      "modulos": [
+        { "n": 1, "titulo": "Introducción y Estado de la Situación Financiera", "desde": "2026-08-03", "hasta": "2026-08-16" },
+        { "n": 2, "titulo": "Estado de Resultados y Acciones", "desde": "2026-08-17", "hasta": "2026-08-30" },
+        { "n": 3, "titulo": "Deterioro de Cartera", "desde": "2026-08-31", "hasta": "2026-09-06" },
+        { "n": 4, "titulo": "Activos No Corrientes", "desde": "2026-09-07", "hasta": "2026-09-13" },
+        { "n": 5, "titulo": "Conceptos y Cuentas Creadas para los Ajustes", "desde": "2026-09-14", "hasta": "2026-09-20" },
+        { "n": 6, "titulo": "Flujos de Caja", "desde": "2026-10-05", "hasta": "2026-10-18" },
+        { "n": 7, "titulo": "Punto de Equilibrio", "desde": "2026-10-19", "hasta": "2026-10-25" },
+        { "n": 8, "titulo": "Análisis y Diagnóstico, Valoración por múltiplos", "desde": "2026-11-02", "hasta": "2026-11-11" },
+        { "n": 9, "titulo": "Planeación Financiera", "desde": "2026-11-12", "hasta": "2026-11-22" }
+      ],
+      "nota": "Entregas tardías de talleres: 80% hasta 12:15 a.m., 60% hasta 12:30, 40% hasta 12:45, 20% hasta 12:59, 0% desde la 1:00 a.m."
+    },
+    {
+      "id": "diseno",
+      "nombre": "Diseño en Ingeniería Industrial",
+      "corto": "Diseño",
+      "carpeta": "Diseño en Ingeniería Industrial",
+      "seccion": "3",
+      "profesor": { "nombre": "Juan Daniel Álvarez Cadena", "correo": "jd.alvarez17@uniandes.edu.co" },
+      "salon": "RGD_312-13",
+      "horario": [{ "dia": 3, "salon": "RGD_312-13" }],
+      "proyecto": "Lejos de casa, cerca del límite · Grupo 1",
+      "evaluacion": [
+        { "rubro": "Primera presentación — Descubrir", "peso": 10 },
+        { "rubro": "Segunda presentación — Definir", "peso": 10 },
+        { "rubro": "Tercera presentación — Desarrollar", "peso": 10 },
+        { "rubro": "Ejercicios individuales y comprobaciones de lectura", "peso": 15 },
+        { "rubro": "Talleres / actividades en clase", "peso": 15 },
+        { "rubro": "Casos", "peso": 15 },
+        { "rubro": "Presentación final", "peso": 15 },
+        { "rubro": "Pitch", "peso": 10 },
+        { "rubro": "Bonos", "peso": 5, "bono": true }
+      ],
+      "eventos": [
+        { "fecha": "2026-09-02", "titulo": "Primera presentación — etapa «Descubrir»", "tipo": "presentacion", "rubro": "Primera presentación — Descubrir" },
+        { "fecha": "2026-09-23", "titulo": "Segunda presentación — etapa «Definir»", "tipo": "presentacion", "rubro": "Segunda presentación — Definir" },
+        { "fecha": "2026-10-07", "titulo": "Entrega Caso 1", "tipo": "entrega" },
+        { "fecha": "2026-10-28", "titulo": "Tercera presentación — etapa «Desarrollar»", "tipo": "presentacion", "rubro": "Tercera presentación — Desarrollar" },
+        { "fecha": "2026-11-11", "titulo": "Entrega Caso 2", "tipo": "entrega" },
+        { "fecha": "2026-11-25", "titulo": "Presentaciones finales del curso", "tipo": "final", "rubro": "Presentación final" }
+      ],
+      "nota": "Entrega tardía el mismo día: −0,5. Después de ese día: 0. Toda entrega va por correo o Bloque Neón."
+    },
+    {
+      "id": "familia",
+      "nombre": "Empresas de Familia: ¿el cielo o el infierno?",
+      "corto": "Empresas de Familia",
+      "codigo": "ADMI-3138",
+      "carpeta": "Empresas de Familia",
+      "facultad": "Administración",
+      "creditos": 3,
+      "profesor": { "nombre": "Diego Gabriel Vélez Montes", "correo": "dvelez@uniandes.edu.co" },
+      "monitor": { "nombre": "Samuel García", "correo": "s.garciav2@uninandes.edu.co" },
+      "atencion": "Con cita previa, presencial o virtual",
+      "salon": "B-201",
+      "horario": [
+        { "dia": 3, "inicio": "12:30", "fin": "13:50", "salon": "B-201" },
+        { "dia": 5, "inicio": "12:30", "fin": "13:50", "salon": "B-201" }
+      ],
+      "proyecto": "Arrocera Gélvez · Grupo 2",
+      "evaluacion": [
+        { "rubro": "Participación en clase", "peso": 20 },
+        { "rubro": "Kahoots pre-clase", "peso": 5 },
+        { "rubro": "Resumen de caso 1", "peso": 4 },
+        { "rubro": "Resumen de caso 2", "peso": 4 },
+        { "rubro": "Resumen de caso 3", "peso": 4 },
+        { "rubro": "Resumen de caso 4", "peso": 4 },
+        { "rubro": "Resumen de caso 5", "peso": 4 },
+        { "rubro": "Entrega parcial del proyecto 1", "peso": 6.25 },
+        { "rubro": "Entrega parcial del proyecto 2", "peso": 6.25 },
+        { "rubro": "Entrega parcial del proyecto 3", "peso": 6.25 },
+        { "rubro": "Entrega parcial del proyecto 4", "peso": 6.25 },
+        { "rubro": "Entrega final (informe y presentación)", "peso": 30 }
+      ],
+      "eventos": [
+        { "fecha": "2026-11-20", "titulo": "Límite para subir el certificado de Coursera (bono 10% sobre la nota más baja)", "tipo": "bono" },
+        { "fecha": "2026-11-27", "titulo": "Última sesión del curso", "tipo": "clase" }
+      ],
+      "nota": "Entregas tardías sin justificación: sobre el 70% durante las primeras 24 horas; después no se reciben. Semana de trabajo individual: 12–16 de octubre.",
+      "modulos": [
+        { "n": 1, "titulo": "La empresa de familia como sistema", "desde": "2026-08-05", "hasta": "2026-08-21" },
+        { "n": 2, "titulo": "Cultura, valores y relaciones familiares", "desde": "2026-08-26", "hasta": "2026-09-16" }
+      ]
+    }
+  ]
+}

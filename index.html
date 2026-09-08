@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mi semestre</title>
+<meta name="description" content="Materias, entregas, parciales y notas del semestre.">
+<link rel="stylesheet" href="./estilos.css">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./iconos/icono.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./iconos/icono-180.png">
+<meta name="theme-color" content="#f9f9f7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0d0d" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Mi semestre">
+</head>
+<body>
+
+<header class="cabecera">
+  <div class="cabecera-fila">
+    <div class="crece">
+      <h1 id="titulo">Mi semestre</h1>
+      <div class="sub" id="subtitulo">Cargando…</div>
+    </div>
+    <button class="boton-icono" id="btn-tema" title="Cambiar tema" aria-label="Cambiar tema">◐</button>
+  </div>
+  <nav class="pestanas" role="tablist">
+    <button class="pestana" role="tab" data-vista="hoy" aria-selected="true">Lo que viene</button>
+    <button class="pestana" role="tab" data-vista="calendario" aria-selected="false">Calendario</button>
+    <button class="pestana" role="tab" data-vista="materias" aria-selected="false">Materias</button>
+    <button class="pestana" role="tab" data-vista="pendientes" aria-selected="false">Pendientes</button>
+  </nav>
+</header>
+
+<main class="envoltura">
+  <section id="vista-hoy"></section>
+  <section id="vista-calendario" hidden></section>
+  <section id="vista-materias" hidden></section>
+  <section id="vista-pendientes" hidden></section>
+  <p class="pie-sync" id="pie"></p>
+</main>
+
+<input type="file" id="archivo-respaldo" accept="application/json,.json" hidden>
+<script type="module" src="./app.js"></script>
+</body>
+</html>

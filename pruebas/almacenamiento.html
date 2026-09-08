@@ -1,0 +1,56 @@
+<!doctype html><meta charset=utf-8><title>Pruebas de almacenamiento</title>
+<pre id=o style="font:12px/1.6 monospace;padding:10px;white-space:pre-wrap"></pre>
+<script type="module">
+import * as a from "../almacenamiento.js";
+let fallos=0;
+const ok=(n,g,e)=>{const A=JSON.stringify(g),B=JSON.stringify(e);
+  if(A===B){o.textContent+=`  ok    ${n}\n`;}else{fallos++;o.textContent+=`  FALLA ${n}\n        obtuvo ${A}\n        esperaba ${B}\n`;}};
+
+a.borrarTodo();
+o.textContent += "Notas\n";
+ok("arranca vacío", a.notasDe("fisica"), {});
+a.guardarNota("fisica","Evaluación 1",4.2);
+a.guardarNota("fisica","Evaluación 2",3.8);
+ok("guarda", a.notasDe("fisica"), {"Evaluación 1":4.2,"Evaluación 2":3.8});
+a.guardarNota("fisica","Evaluación 1",null);
+ok("null borra", a.notasDe("fisica"), {"Evaluación 2":3.8});
+ok("materia sin notas", a.notasDe("nada"), {});
+
+o.textContent += "\nSobrevive a recargar el módulo\n";
+const crudo = localStorage.getItem("mi-semestre:v1");
+ok("quedó escrito en localStorage", JSON.parse(crudo).notas.fisica, {"Evaluación 2":3.8});
+
+o.textContent += "\nEntregas marcadas\n";
+const clave = a.claveEvento({fuente:"syllabus",materiaId:"fafi",fecha:"2026-09-20",titulo:"Entrega Taller 2"});
+ok("clave estable", clave, "syllabus|fafi|2026-09-20|Entrega Taller 2");
+ok("no marcada", a.estaHecha(clave), false);
+a.marcar(clave,true);
+ok("marcada", a.estaHecha(clave), true);
+// La clave no debe depender del orden de las fuentes ni del índice en la lista.
+ok("misma clave con otro objeto igual",
+   a.claveEvento({fuente:"syllabus",materiaId:"fafi",fecha:"2026-09-20",titulo:"Entrega  Taller 2"}), clave);
+
+o.textContent += "\nRespaldo\n";
+const antes = a.respaldoPendiente();
+ok("cuenta cambios sin respaldar", antes > 0, true);
+const copia = a.exportar();
+ok("el contador se reinicia al exportar", a.respaldoPendiente(), 0);
+ok("registra la fecha", typeof a.ultimoRespaldo(), "string");
+
+a.borrarTodo();
+ok("borrado deja vacío", a.notasDe("fisica"), {});
+ok("borrado quita las marcas", a.estaHecha(clave), false);
+
+const r = a.importar(copia);
+ok("restaura las notas", a.notasDe("fisica"), {"Evaluación 2":3.8});
+ok("restaura las marcas", a.estaHecha(clave), true);
+ok("informa cuánto restauró", r, {notas:1, hechas:1});
+
+let rechazo=null;
+try { a.importar('{"hola":1}'); } catch(e) { rechazo = e.message; }
+ok("rechaza un archivo ajeno", rechazo, "Ese archivo no es un respaldo de esta app.");
+
+a.borrarTodo();
+o.textContent += fallos ? `\n${fallos} prueba(s) fallando\n` : "\nTodas las pruebas pasan\n";
+document.title = fallos ? "FALLA" : "OK";
+</script>

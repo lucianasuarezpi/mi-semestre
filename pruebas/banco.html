@@ -1,0 +1,29 @@
+<!doctype html><meta charset=utf-8>
+<style>html,body{margin:0;background:#555}iframe{width:390px;height:1500px;border:0;display:block;margin:0 auto}#r{font:12px monospace;color:#fff;padding:6px}</style>
+<div id=r>…</div>
+<script>
+const q=new URLSearchParams(location.search), vista=q.get("vista"), tema=q.get("tema");
+if(q.get("notas")==="demo"){
+  localStorage.setItem("mi-semestre:v1", JSON.stringify({
+    notas:{ fisica:{"Evaluación 1":4.2,"Evaluación 2":3.8,"Laboratorio de Física Experimental I":4.5},
+            algebra:{"Quices en Bloque Neón":3.4},
+            calculo:{"Examen Parcial 1":2.9} },
+    hechas:{}, meta:{ultimoRespaldo:null,cambiosDesdeRespaldo:11}
+  }));
+} else { localStorage.removeItem("mi-semestre:v1"); }
+document.write('<iframe id=f src="../index.html"></iframe>');
+</script>
+<script>
+setTimeout(()=>{
+  const d=f.contentDocument;
+  if(tema) d.documentElement.dataset.tema=tema;
+  if(vista) d.querySelector(`.pestana[data-vista="${vista}"]`).click();
+  setTimeout(()=>{
+    const W=d.documentElement.clientWidth;
+    const malos=[...d.querySelectorAll("*")].filter(e=>e.getBoundingClientRect().right>W+1)
+      .slice(0,8).map(e=>`${e.tagName}.${e.className||"-"}`);
+    r.textContent=`vista=${vista||"hoy"} tema=${tema||"auto"} viewport=${W} docScroll=${d.documentElement.scrollWidth} | `
+      +(malos.join(" · ")||"sin desbordamiento");
+  },400);
+},2500);
+</script>

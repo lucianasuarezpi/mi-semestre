@@ -1,0 +1,67 @@
+name: Sincronizar y publicar
+
+on:
+  schedule:
+    # Cada hora, al minuto 17. GitHub retrasa mucho los cron que caen en punto,
+    # porque es cuando todo el mundo los programa.
+    - cron: "17 * * * *"
+  workflow_dispatch:        # botón para dispararlo a mano desde la pestaña Actions
+  push:
+    branches: [main]
+
+# Si una corrida se demora, que la siguiente no se le encime.
+concurrency:
+  group: publicar
+  cancel-in-progress: false
+
+permissions:
+  contents: write           # commit de datos/agenda.json
+  pages: write              # publicar el sitio
+  id-token: write           # lo exige deploy-pages
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    environment:
+      name: github-pages
+      url: ${{ steps.desplegar.outputs.page_url }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"   # trae fetch nativo; el script no usa dependencias
+
+      - name: Probar las piezas delicadas
+        run: node scripts/probar.mjs
+
+      - name: Consultar Notion y Bloque Neón
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DB_ID: ${{ secrets.NOTION_DB_ID }}
+          BLOQUENEON_ICS_URL: ${{ secrets.BLOQUENEON_ICS_URL }}
+        run: node scripts/sincronizar.mjs
+
+      - name: Guardar la agenda si cambió
+        run: |
+          if git diff --quiet -- datos/agenda.json; then
+            echo "Sin cambios en la agenda."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add datos/agenda.json
+          git commit -m "Agenda actualizada"
+          git push
+
+      # Publicamos explícitamente en vez de confiar en que el commit del bot
+      # dispare la reconstrucción de Pages: los commits hechos con GITHUB_TOKEN
+      # no disparan workflows de forma fiable.
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - uses: actions/deploy-pages@v4
+        id: desplegar
