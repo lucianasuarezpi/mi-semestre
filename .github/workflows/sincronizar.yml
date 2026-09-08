@@ -9,10 +9,12 @@ on:
   push:
     branches: [main]
 
-# Si una corrida se demora, que la siguiente no se le encime.
+# GitHub Pages solo admite un despliegue a la vez: dos corridas encimadas
+# (un push que cae junto al cron) hacen que la segunda falle con 403. Cancelar
+# la vieja es lo correcto aquí, porque la nueva trae datos y código más frescos.
 concurrency:
   group: publicar
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 permissions:
   contents: read            # solo leer el repo; nada que escribir
