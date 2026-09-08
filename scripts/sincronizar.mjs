@@ -182,15 +182,22 @@ export function parsearICS(ics) {
   return eventos;
 }
 
-async function leerBloqueNeon() {
-  const url = process.env.BLOQUENEON_ICS_URL.replace(/^webcal:/i, "https:");
+// Los dos feeds hablan iCalendar, así que los leemos igual. `id` viaja con
+// cada evento para que la interfaz sepa de dónde salió.
+const FEEDS = [
+  { id: "clases",     env: "CLASES_ICS_URL",     etiqueta: "tu calendario" },
+  { id: "bloqueneon", env: "BLOQUENEON_ICS_URL", etiqueta: "Bloque Neón" },
+];
+
+async function leerFeed(variable, id) {
+  const url = process.env[variable].replace(/^webcal:/i, "https:");
   const r = await fetch(url, { headers: { "User-Agent": "mi-semestre/1.0" } });
-  if (!r.ok) throw new Error(`Bloque Neón respondió ${r.status}`);
+  if (!r.ok) throw new Error(`El servidor respondió ${r.status}`);
   const texto = await r.text();
   if (!texto.includes("BEGIN:VCALENDAR")) {
     throw new Error("La URL no devolvió un calendario iCalendar. ¿Sigue siendo válido el token?");
   }
-  return parsearICS(texto);
+  return parsearICS(texto).map((e) => ({ ...e, fuente: id }));
 }
 
 /* ── Main ───────────────────────────────────────────────────────────────── */
@@ -211,16 +218,18 @@ if (esPrincipal) {
     salida.fuentes.notion = { ok: false, error: "Faltan los secretos NOTION_TOKEN o NOTION_DB_ID." };
   }
 
-  if (process.env.BLOQUENEON_ICS_URL) {
-    try {
-      const eventos = await leerBloqueNeon();
-      salida.eventos.push(...eventos);
-      salida.fuentes.bloqueneon = { ok: true, total: eventos.length };
-    } catch (e) {
-      salida.fuentes.bloqueneon = { ok: false, error: e.message };
+  for (const feed of FEEDS) {
+    if (!process.env[feed.env]) {
+      salida.fuentes[feed.id] = { ok: false, error: `Falta el secreto ${feed.env}.` };
+      continue;
     }
-  } else {
-    salida.fuentes.bloqueneon = { ok: false, error: "Falta el secreto BLOQUENEON_ICS_URL." };
+    try {
+      const eventos = await leerFeed(feed.env, feed.id);
+      salida.eventos.push(...eventos);
+      salida.fuentes[feed.id] = { ok: true, total: eventos.length };
+    } catch (e) {
+      salida.fuentes[feed.id] = { ok: false, error: e.message };
+    }
   }
 
   salida.eventos.sort((a, b) =>

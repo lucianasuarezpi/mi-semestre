@@ -85,6 +85,8 @@ const ETIQUETA = {
 };
 const MARCABLE = new Set(["entrega", "presentacion", "parcial", "final"]);
 
+const NOMBRE_FUENTE = { notion: "Notion", bloqueneon: "Bloque Neón", clases: "Calendario" };
+
 /* ── Estado ─────────────────────────────────────────────────────────────── */
 
 const estado = { semestre: null, agenda: null, vista: "hoy", semana: lunesDe(hoy()) };
@@ -141,8 +143,7 @@ function filaEvento(ev, { conCasilla = true } = {}) {
   if (ETIQUETA[ev.tipo]) meta.append(crear("span", `insignia ${ev.tipo}`, ETIQUETA[ev.tipo]));
   if (ev.hora) meta.append(crear("span", null, ev.hora));
   if (ev.impreciso) meta.append(crear("span", null, "fecha por confirmar"));
-  if (ev.fuente === "notion") meta.append(crear("span", "insignia fuente", "Notion"));
-  if (ev.fuente === "bloqueneon") meta.append(crear("span", "insignia fuente", "Bloque Neón"));
+  if (NOMBRE_FUENTE[ev.fuente]) meta.append(crear("span", "insignia fuente", NOMBRE_FUENTE[ev.fuente]));
   if (meta.childNodes.length) cuerpo.append(meta);
 
   fila.append(cuando, cuerpo);
@@ -249,7 +250,7 @@ function avisos() {
     if (info.ok) continue;
     const a = crear("div", "alerta");
     a.append(crear("span", null, "!"), crear("span", null, ""));
-    a.lastChild.append(crear("b", null, `${nombre === "notion" ? "Notion" : "Bloque Neón"} no está conectado. `),
+    a.lastChild.append(crear("b", null, `${NOMBRE_FUENTE[nombre] || nombre} no está conectado. `),
       document.createTextNode(info.error));
     caja.append(a);
   }
@@ -278,7 +279,10 @@ function vistaCalendario() {
   const bloques = [];
   const sueltos = [];  // sin hora → van arriba, como chips
 
-  for (const m of estado.semestre.materias) {
+  const fuenteClases = estado.agenda?.fuentes?.clases;
+  const hayCalendarioReal = Boolean(fuenteClases?.ok && fuenteClases.total > 0);
+
+  for (const m of hayCalendarioReal ? [] : estado.semestre.materias) {
     for (const hor of m.horario || []) {
       const f = dias[hor.dia - 1];
       if (!f) continue;

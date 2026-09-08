@@ -60,7 +60,30 @@ No hace falta que las columnas se llamen de ninguna forma en particular: el
 script lee el esquema de la base y detecta solo cuál es la fecha, cuál el
 título y cuál la materia.
 
-### 4 · Conectar Bloque Neón (opcional)
+### 4 · Conectar tu calendario de clases
+
+Tus clases viven en tu cuenta de calendario, no en Notion (Notion Calendar solo
+las muestra). Google Calendar da una URL privada en formato iCal que no depende
+de tu sesión:
+
+Google Calendar → engranaje de **Configuración** → en *Configuración de mis
+calendarios*, el calendario de las clases → **Integrar calendario** → copia
+**Dirección secreta en formato iCal**.
+
+```
+https://calendar.google.com/calendar/ical/.../private-XXXXXXXX/basic.ics
+```
+
+Va en el secreto `CLASES_ICS_URL`. Es una contraseña: si se filtra, en esa misma
+pantalla hay un botón *Restablecer*.
+
+> En cuentas de Google Workspace (las institucionales) el administrador puede
+> tener esa opción desactivada, y entonces no aparece.
+
+Cuando este feed trae eventos, la app deja de dibujar los horarios fijos de
+`semestre.json` y usa el calendario real, para que las clases no salgan dos veces.
+
+### 5 · Conectar Bloque Neón (opcional)
 
 Bloque Neón no tiene API para estudiantes, pero sí un feed de calendario con
 token propio que **no depende de tu sesión web**:
@@ -74,7 +97,7 @@ Feeds** → guarda → botón **Subscribe** → escoge *All Calendars* → copia
 
 Ese token da acceso de lectura a tu calendario: trátalo como una contraseña.
 
-### 5 · Cargar los secretos
+### 6 · Cargar los secretos
 
 Repo → **Settings → Secrets and variables → Actions → New repository secret**:
 
@@ -82,12 +105,13 @@ Repo → **Settings → Secrets and variables → Actions → New repository sec
 |---|---|
 | `NOTION_TOKEN` | el Internal Integration Secret |
 | `NOTION_DB_ID` | los 32 caracteres del link |
-| `BLOQUENEON_ICS_URL` | la URL del feed (si la conseguiste) |
+| `CLASES_ICS_URL` | la dirección secreta iCal de tu calendario de clases |
+| `BLOQUENEON_ICS_URL` | la URL del feed de Bloque Neón (si la conseguiste) |
 
 Luego, en la pestaña **Actions**, corre *Sincronizar y publicar* a mano la
 primera vez.
 
-### 6 · Instalarla en el celular
+### 7 · Instalarla en el celular
 
 Abre la URL en Safari y usa **Compartir → Añadir a pantalla de inicio**.
 

@@ -1,10 +1,14 @@
 {
- "generado": "2026-09-08T14:40:04.264Z",
+ "generado": "2026-09-08T15:03:16.668Z",
  "eventos": [],
  "fuentes": {
   "notion": {
    "ok": false,
    "error": "Faltan los secretos NOTION_TOKEN o NOTION_DB_ID."
+  },
+  "clases": {
+   "ok": false,
+   "error": "Falta el secreto CLASES_ICS_URL."
   },
   "bloqueneon": {
    "ok": false,

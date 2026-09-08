@@ -41,6 +41,7 @@ jobs:
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_DB_ID: ${{ secrets.NOTION_DB_ID }}
+          CLASES_ICS_URL: ${{ secrets.CLASES_ICS_URL }}
           BLOQUENEON_ICS_URL: ${{ secrets.BLOQUENEON_ICS_URL }}
         run: node scripts/sincronizar.mjs
 
