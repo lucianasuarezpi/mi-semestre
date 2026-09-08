@@ -100,6 +100,9 @@ async function cargar() {
   semestre.materias.forEach((m, i) => (m.color = `var(--m${(i % 6) + 1})`));
 }
 
+/** Lo que va en la línea de tiempo: sin las clases semanales. */
+const sinClasesRepetidas = (lista) => lista.filter((e) => !e.recurrente);
+
 /** Todos los eventos con fecha, de las tres fuentes, ordenados. */
 function eventos() {
   const materias = estado.semestre.materias;
@@ -169,7 +172,7 @@ function vistaHoy() {
   cont.replaceChildren();
   const h = hoy();
   const s = estado.semestre;
-  const todos = eventos();
+  const todos = sinClasesRepetidas(eventos());
   const futuros = todos.filter((e) => diasEntre(h, aFecha(e.fecha)) >= 0);
 
   // Indicadores
@@ -346,7 +349,10 @@ function vistaCalendario() {
 
   // Lunes a viernes siempre; el fin de semana solo si hay algo. Con 7 columnas
   // en un celular el texto de cada bloque queda ilegible.
-  const ocupados = new Set([...bloques, ...sueltos].map((b) => b.col));
+  // Solo las clases con hora deciden si aparece el fin de semana: un cumpleaños
+  // el sábado no debe apretar las cinco columnas entre semana. Los eventos sin
+  // hora salen igual, arriba, con su día escrito.
+  const ocupados = new Set(bloques.map((b) => b.col));
   const visibles = [0, 1, 2, 3, 4].concat([5, 6].filter((c) => ocupados.has(c)));
 
   const rejilla = crear("div", "cal-rejilla");
@@ -525,7 +531,8 @@ function vistaPendientes() {
   const cont = $("#vista-pendientes");
   cont.replaceChildren();
   const h = hoy();
-  const marcables = eventos().filter((e) => MARCABLE.has(e.tipo) && diasEntre(h, aFecha(e.fecha)) >= -30);
+  const marcables = sinClasesRepetidas(eventos())
+    .filter((e) => MARCABLE.has(e.tipo) && diasEntre(h, aFecha(e.fecha)) >= -30);
 
   const sec = crear("div", "seccion");
   sec.style.marginTop = "18px";
