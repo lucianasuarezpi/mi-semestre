@@ -271,3 +271,79 @@ button { font: inherit; }
 [hidden] { display: none !important; }
 
 @media (min-width: 700px) { .datos { grid-template-columns: 1fr 1fr; } }
+
+/* ── Panel de escritorio ──────────────────────────────────────────────────
+   Debajo de 1100px no pasa nada de esto: el celular se queda como está.
+   Arriba, la cabecera se convierte en barra lateral y las cuatro vistas
+   —que pintar() ya dibuja siempre— dejan de esconderse y se acomodan en
+   rejilla. El calendario y materias van en la columna ancha; lo que viene y
+   pendientes en la angosta, que es donde se leen mejor en vertical.        */
+@media (min-width: 1100px) {
+  body { padding-bottom: 0; }
+
+  .cabecera {
+    position: fixed; inset: 0 auto 0 0; width: 224px; z-index: 30;
+    border-bottom: 0; border-right: 1px solid var(--linea);
+    background: var(--superficie);
+    backdrop-filter: none;
+    display: flex; flex-direction: column; padding: 0;
+  }
+  .cabecera-fila {
+    max-width: none; margin: 0; padding: 20px 18px 16px;
+    border-bottom: 1px solid var(--linea);
+  }
+  .cabecera h1 { font-size: 15px; }
+
+  .pestanas {
+    flex-direction: column; gap: 1px; max-width: none; margin: 0;
+    padding: 12px 12px; overflow: visible;
+  }
+  .pestana {
+    text-align: left; padding: 9px 12px; border-radius: 8px; width: 100%;
+  }
+  .pestana[aria-selected="true"] { background: var(--superficie-2); }
+
+  main.envoltura {
+    max-width: none; margin: 0 0 0 224px; padding: 24px 28px 40px;
+    display: grid; gap: 20px; align-items: start;
+    grid-template-columns: minmax(0, 1.65fr) minmax(320px, 1fr);
+    grid-template-areas:
+      "calendario alviene"
+      "materias   alviene"
+      "materias   pendientes"
+      "pie        pie";
+  }
+
+  #vista-calendario  { grid-area: calendario; }
+  #vista-materias    { grid-area: materias; }
+  #vista-hoy         { grid-area: alviene; }
+  #vista-pendientes  { grid-area: pendientes; }
+  .pie-sync          { grid-area: pie; margin-top: 8px; }
+
+  /* Cada vista pasa a ser una tarjeta del panel. */
+  main.envoltura > section {
+    background: var(--superficie); border: 1px solid var(--linea);
+    border-radius: var(--r); padding: 16px; box-shadow: var(--sombra);
+    min-width: 0;
+  }
+
+  /* Con el panel ancho caben más materias por fila. */
+  .tarjetas { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
+
+  /* El calendario se estira hasta el último evento del día, y una entrega de
+     Bloque Neón a las 23:59 lo alarga hasta medianoche con la cuadrícula
+     vacía. En el panel se le pone techo y scroll propio; si no, Materias
+     queda enterrada muy por debajo del borde de la pantalla. */
+  #vista-calendario .cal-rejilla { max-height: 58vh; overflow-y: auto; }
+  #vista-calendario .cal-barra { margin-top: 0; }
+  /* Los días se quedan pegados arriba mientras el resto rueda. */
+  #vista-calendario .cal-encabezado > div {
+    position: sticky; top: 0; z-index: 4; background: var(--superficie);
+  }
+}
+
+/* En pantallas muy anchas el panel deja de estirarse: una línea de texto de
+   200 caracteres no se lee. */
+@media (min-width: 1700px) {
+  main.envoltura { max-width: 1560px; }
+}

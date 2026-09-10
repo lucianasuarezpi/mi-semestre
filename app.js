@@ -593,12 +593,29 @@ function pintar() {
     : "Sin agenda sincronizada — solo los syllabus";
 }
 
+const VISTAS = ["hoy", "calendario", "materias", "pendientes"];
+
+// El mismo umbral que en estilos.css. Arriba de esto la app es un panel con
+// las cuatro vistas a la vez; debajo, las pestañas de siempre.
+const PANEL = window.matchMedia("(min-width: 1100px)");
+
+function aplicarVista() {
+  const v = estado.vista;
+  for (const b of document.querySelectorAll(".pestana")) b.setAttribute("aria-selected", String(b.dataset.vista === v));
+  // En el panel no se esconde nada: el menú solo marca dónde estás.
+  for (const id of VISTAS) $(`#vista-${id}`).hidden = PANEL.matches ? false : id !== v;
+}
+
 function cambiarVista(v) {
   estado.vista = v;
-  for (const b of document.querySelectorAll(".pestana")) b.setAttribute("aria-selected", String(b.dataset.vista === v));
-  for (const id of ["hoy", "calendario", "materias", "pendientes"]) $(`#vista-${id}`).hidden = id !== v;
-  window.scrollTo({ top: 0 });
+  aplicarVista();
+  if (PANEL.matches) $(`#vista-${v}`).scrollIntoView({ behavior: "smooth", block: "start" });
+  else window.scrollTo({ top: 0 });
 }
+
+// Al cruzar el umbral (girar la tableta, cambiar el tamaño de la ventana) hay
+// que rehacer los hidden, o quedan los del otro modo.
+PANEL.addEventListener("change", aplicarVista);
 
 async function iniciar() {
   const tema = PREF.get("tema", null);
@@ -632,6 +649,7 @@ async function iniciar() {
     return;
   }
   pintar();
+  aplicarVista();   // sin esto quedan los hidden del HTML y el panel sale vacío
 
   // Pedimos almacenamiento persistente: en iOS ayuda a que no lo borren.
   navigator.storage?.persist?.().catch(() => {});
