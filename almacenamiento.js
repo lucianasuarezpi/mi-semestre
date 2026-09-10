@@ -72,7 +72,7 @@ export function marcar(clave, hecha) {
 
 /**
  * Identificador estable de un evento. No puede depender del orden de las
- * fuentes ni del índice en la lista: si Notion reordena, la marca se perdería.
+ * fuentes ni del índice en la lista: si el feed reordena, la marca se perdería.
  */
 export function claveEvento(ev) {
   return [ev.fuente || "syllabus", ev.materiaId || ev.materiaTexto || "", ev.fecha, ev.titulo]

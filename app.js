@@ -1,6 +1,6 @@
 // Une tres fuentes en una sola línea de tiempo:
 //   datos/semestre.json  — los syllabus (fijo)
-//   datos/agenda.json    — Notion + Bloque Neón, lo escribe la GitHub Action
+//   datos/agenda.json    — los feeds iCal, lo escribe la GitHub Action
 //   localStorage         — las notas y las entregas marcadas
 // Si agenda.json no existe todavía, la app funciona igual con los syllabus.
 
@@ -85,7 +85,7 @@ const ETIQUETA = {
 };
 const MARCABLE = new Set(["entrega", "presentacion", "parcial", "final"]);
 
-const NOMBRE_FUENTE = { notion: "Notion", bloqueneon: "Bloque Neón", clases: "Calendario" };
+const NOMBRE_FUENTE = { bloqueneon: "Bloque Neón", clases: "Calendario" };
 
 /* ── Estado ─────────────────────────────────────────────────────────────── */
 

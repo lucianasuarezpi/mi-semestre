@@ -22,10 +22,11 @@ clases y entregas en un solo lugar, y **llevar la cuenta de sus notas**.
 
 - Publicado en GitHub Pages, instalable en el celular como app.
 - Sincroniza cada hora (minuto 17) por GitHub Actions.
-- **303 eventos** entrando desde su Google Calendar: 8 materias con sus
-  complementarias y laboratorios, más entregas y quices que ella anota.
+- **338 eventos**: 303 de su Google Calendar (8 materias con sus
+  complementarias y laboratorios, más lo que ella anota) y 35 entregas de
+  Bloque Neón.
 - Registro de notas funcionando, con respaldo descargable.
-- 37 pruebas en terminal + 17 en navegador, todas pasando.
+- 42 pruebas en terminal + 17 en navegador, todas pasando.
 
 ---
 
@@ -76,6 +77,13 @@ conectarlas a mano sería trabajo eterno para una semana de horario.
 
 La ruta buena fue la **dirección secreta iCal** de Google Calendar.
 
+**Notion se quitó del proyecto el 9 de septiembre de 2026.** Ella lo confirmó:
+arma su horario en Notion Calendar, pero eso es su Google Calendar enlazado, y
+ese ya entra por iCal. La API de Notion además no ve ese calendario — solo ve
+páginas y bases del workspace. Una base `mi-semestre` habría sido un segundo
+lugar donde escribir lo que ya escribe en Google Calendar. No volver a
+proponerlo.
+
 ---
 
 ## Arquitectura
@@ -116,7 +124,7 @@ Costo total: **$0**.
 │   ├── semestre.json                   los syllabus, a mano
 │   └── agenda.json                     marcador; la Action lo regenera al publicar
 ├── scripts/
-│   ├── sincronizar.mjs                 feeds iCal + Notion
+│   ├── sincronizar.mjs                 feeds iCal
 │   └── probar.mjs                      pruebas de terminal
 ├── pruebas/                            banco de pruebas visual + LEEME
 └── .github/workflows/sincronizar.yml
@@ -175,6 +183,23 @@ documentos: 483 archivos, incluidos los libros de Stewart y Sears–Zemansky, co
 derechos de autor. El proyecto vive fuera justamente para que no puedan subirse
 por error. Si VS Code ofrece *Initialize Repository* ahí, no aceptar.
 
+**Bloque Neón solo trae la mitad de las materias, y no es un error.** El feed
+marca cada actividad tres veces: `- Disponible` (se publicó el material),
+`- La disponibilidad finaliza` y `- Vencimiento` (la entrega). `soloEntregas()`
+en `scripts/sincronizar.mjs` se queda con las de vencimiento y descarta el
+resto; sin ese filtro la línea de tiempo se llena de avisos de PDFs colgados.
+
+La cobertura depende de si cada profesor pone las fechas en Brightspace:
+Empresas de Familia 18, Diseño 7, FAFI 8, Álgebra 1, Física 1 y **Cálculo
+Integral ninguna**. Pulse muestra exactamente lo mismo porque bebe de la misma
+fuente. Para esas materias siguen mandando el syllabus y lo que ella anota en
+Google Calendar. Verificado el 9 de septiembre de 2026 sobre el feed real.
+
+El `LOCATION` de este feed no es un salón: es el curso de Brightspace («ELEC
+EMPRESAS DE FAMILIA»). Por eso se copia a `materiaTexto`, donde `emparejar()`
+lo enlaza con la materia y el evento hereda su color. Las dos aulas de FAFI
+(la normal y la «- UNIFICADO») caen en la misma materia.
+
 **Rutas siempre relativas** (`./estilos.css`). GitHub Pages sirve el sitio bajo
 `/mi-semestre/`, no en la raíz del dominio.
 
@@ -186,7 +211,7 @@ si estorba, se pueden fusionar por fecha + materia + tipo.
 ## Cómo verificar
 
 ```bash
-node scripts/probar.mjs          # iCal, repeticiones, esquema de Notion, notas
+node scripts/probar.mjs          # iCal, repeticiones, expansión, notas
 python3 -m http.server 8080      # y abrir pruebas/banco.html y pruebas/almacenamiento.html
 ```
 
@@ -201,20 +226,21 @@ En **GitHub → Settings → Secrets and variables → Actions**, y en `.env` lo
 | Secreto | Estado |
 |---|---|
 | `CLASES_ICS_URL` | cargado — dirección secreta iCal de su Google Calendar |
-| `NOTION_TOKEN` / `NOTION_DB_ID` | sin cargar; el código está listo pero apagado |
-| `BLOQUENEON_ICS_URL` | sin cargar; falta ver si Uniandes lo permite |
+| `BLOQUENEON_ICS_URL` | cargado — feed iCal de Bloque Neón (Uniandes sí lo permite) |
 
 ## Pendientes
 
 - [ ] Que ella **instale la app en la pantalla de inicio** del iPhone. No es
       opcional: de eso depende que no se le borren las notas.
-- [ ] Ver si en Bloque Neón aparece *Calendario → Configuración → Enable
-      Calendar Feeds → Subscribe*. Si no aparece, esa fuente no va.
-- [ ] **Regenerar el token de Notion y la dirección iCal**: ambos quedaron
-      escritos en el chat del 8 de septiembre de 2026.
-- [ ] Iteración de diseño — quedó a medias cuando se cambió de chat.
-- [ ] Decidir si se quita el soporte de Notion (hoy está apagado) o se usa para
-      alguna de sus bases.
+- [ ] **Regenerar las dos direcciones iCal**: la de Google Calendar quedó
+      escrita en el chat del 8 de septiembre de 2026 y la de Bloque Neón en el
+      del 9. En Bloque Neón el token se restablece desde *Calendario →
+      Configuración*; después hay que actualizar el secreto en las dos partes.
+- [ ] **Revocar el token de Notion** (Notion → Settings → Connections → borrar
+      la integración). También quedó escrito en ese chat. Ya no hay código que
+      lo use, pero sigue vivo.
+- [ ] Iteración de diseño — quedó a medias cuando se cambió de chat. Ella
+      quiere retomarla; es lo siguiente.
 
 ## Cómo trabajar con ella
 

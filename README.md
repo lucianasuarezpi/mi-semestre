@@ -4,12 +4,12 @@ Dashboard de materias, entregas, parciales y notas. Se instala en el celular
 como app y se sincroniza sola.
 
 Sin servidor y sin base de datos: GitHub Pages sirve el sitio, una GitHub Action
-consulta Notion y Bloque Neón una vez por hora, y las notas viven en el
+consulta tus calendarios una vez por hora, y las notas viven en el
 navegador del celular.
 
 ```
    GitHub Action (cada hora)
-      │  lee los secretos: NOTION_TOKEN, NOTION_DB_ID, BLOQUENEON_ICS_URL
+      │  lee los secretos: CLASES_ICS_URL, BLOQUENEON_ICS_URL
       ▼
    datos/agenda.json ─────────────────▶ GitHub Pages
                                               │
@@ -17,8 +17,8 @@ navegador del celular.
                               (las notas se guardan aquí)
 ```
 
-El token de Notion vive **solo en GitHub Secrets**. Nunca entra al repo ni al
-sitio publicado.
+Las direcciones iCal viven **solo en GitHub Secrets**. Llevan un token dentro,
+así que nunca entran al repo ni al sitio publicado.
 
 ## Puesta en marcha
 
@@ -41,30 +41,11 @@ No escojas «Deploy from a branch»: el workflow publica explícitamente, porque
 los commits hechos por la Action no disparan de forma fiable la reconstrucción
 automática.
 
-### 3 · Conectar Notion
+### 3 · Conectar tu calendario de clases
 
-1. **notion.so/my-integrations** → *New integration*.
-2. Nombre: `Mi semestre`. En *Capabilities* deja solo **Read content** — la app
-   nunca necesita escribir en tu Notion.
-3. Copia el **Internal Integration Secret**.
-4. Abre tu base de calendario en Notion → menú `⋯` → **Connections** → conecta
-   `Mi semestre`. **Sin este paso la integración no ve nada.**
-5. El id de la base son los 32 caracteres del link, antes del `?`:
-
-   ```
-   notion.so/tuespacio/28f1a4b7c9d34e5f8a0b1c2d3e4f5678?v=...
-                       └──────── NOTION_DB_ID ────────┘
-   ```
-
-No hace falta que las columnas se llamen de ninguna forma en particular: el
-script lee el esquema de la base y detecta solo cuál es la fecha, cuál el
-título y cuál la materia.
-
-### 4 · Conectar tu calendario de clases
-
-Tus clases viven en tu cuenta de calendario, no en Notion (Notion Calendar solo
-las muestra). Google Calendar da una URL privada en formato iCal que no depende
-de tu sesión:
+Tus clases viven en Google Calendar. Si las ves en Notion Calendar, esa app solo
+las muestra: no las guarda. Google Calendar da una URL privada en formato iCal
+que no depende de tu sesión:
 
 Google Calendar → engranaje de **Configuración** → en *Configuración de mis
 calendarios*, el calendario de las clases → **Integrar calendario** → copia
@@ -83,7 +64,7 @@ pantalla hay un botón *Restablecer*.
 Cuando este feed trae eventos, la app deja de dibujar los horarios fijos de
 `semestre.json` y usa el calendario real, para que las clases no salgan dos veces.
 
-### 5 · Conectar Bloque Neón (opcional)
+### 4 · Conectar Bloque Neón
 
 Bloque Neón no tiene API para estudiantes, pero sí un feed de calendario con
 token propio que **no depende de tu sesión web**:
@@ -95,23 +76,32 @@ Feeds** → guarda → botón **Subscribe** → escoge *All Calendars* → copia
 > nivel de institución y no se puede habilitar desde tu cuenta. La app funciona
 > igual, solo sin esa fuente.
 
-Ese token da acceso de lectura a tu calendario: trátalo como una contraseña.
+Ese token da acceso de lectura a tu calendario: trátalo como una contraseña. Si
+se te escapa, vuelve a *Calendario → Configuración* y restablécelo.
 
-### 6 · Cargar los secretos
+**Qué trae este feed.** Brightspace publica cada actividad varias veces: cuándo
+aparece el material (`- Disponible`), cuándo se cierra y cuándo hay que
+entregarla (`- Vencimiento`). La app se queda **solo con las de vencimiento**;
+las demás llenarían la agenda de avisos de que un PDF quedó colgado.
+
+**Qué no trae.** Solo aparecen las materias cuyo profesor pone las fechas en
+Brightspace. Si una materia sale vacía no es un fallo de la app: es que no hay
+nada cargado, y Pulse tampoco te la va a mostrar porque lee la misma fuente.
+Para esas materias mandan el syllabus y lo que anotes en tu calendario.
+
+### 5 · Cargar los secretos
 
 Repo → **Settings → Secrets and variables → Actions → New repository secret**:
 
 | Nombre | Valor |
 |---|---|
-| `NOTION_TOKEN` | el Internal Integration Secret |
-| `NOTION_DB_ID` | los 32 caracteres del link |
 | `CLASES_ICS_URL` | la dirección secreta iCal de tu calendario de clases |
 | `BLOQUENEON_ICS_URL` | la URL del feed de Bloque Neón (si la conseguiste) |
 
 Luego, en la pestaña **Actions**, corre *Sincronizar y publicar* a mano la
 primera vez.
 
-### 7 · Instalarla en el celular
+### 6 · Instalarla en el celular
 
 Abre la URL en Safari y usa **Compartir → Añadir a pantalla de inicio**.
 
@@ -164,7 +154,7 @@ almacenamiento.js                     lo único que sabe dónde viven las notas
 sw.js · manifest.webmanifest          lo que la hace instalable y offline
 datos/semestre.json                   los syllabus, a mano
 datos/agenda.json                     marcador; la Action lo regenera al publicar
-scripts/sincronizar.mjs               Notion + iCal
+scripts/sincronizar.mjs               los feeds iCal
 scripts/probar.mjs                    pruebas de terminal
 .github/workflows/sincronizar.yml     el cron y la publicación
 ```

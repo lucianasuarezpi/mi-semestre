@@ -1,5 +1,5 @@
 {
- "generado": "2026-09-08T15:43:17.022Z",
+ "generado": "2026-09-10T00:31:05.302Z",
  "eventos": [
   {
    "fuente": "clases",
@@ -20,6 +20,16 @@
    "horaFin": "21:00",
    "materiaTexto": null,
    "descripcion": null,
+   "lugar": null
+  },
+  {
+   "fuente": "bloqueneon",
+   "titulo": "Taller 1",
+   "fecha": "2026-08-10",
+   "hora": "21:00",
+   "horaFin": "21:00",
+   "materiaTexto": "DISEÑO EN INGENIERIA INDUSTRIAL",
+   "descripcion": "Subir el Taller 1 grupal. Solo un integrante por grupo debe surgir el taller.   Actividades: Taller 1 - https://bloqueneon.uniandes.edu.co/d2l/lms/dropbox/user/folder_submit_files.d2l?ou=475381&db=461205   Ver evento: https://bloqueneon.uniandes.edu.co/d2l/le/calendar/475381/event/994687/detailsview",
    "lugar": null
   },
   {
@@ -100,6 +110,16 @@
    "recurrente": true
   },
   {
+   "fuente": "bloqueneon",
+   "titulo": "Contrato Psicológico",
+   "fecha": "2026-08-12",
+   "hora": "12:30",
+   "horaFin": "12:30",
+   "materiaTexto": "ELEC EMPRESAS DE FAMILIA",
+   "descripcion": "Descargue el documento adjunto, complete la tercera y cuarta parte con sus respuestas y firma, guárdelo en PDF y súbelo a la plataforma.   Actividades: Contrato Psicológico - https://bloqueneon.uniandes.edu.co/d2l/lms/dropbox/user/folder_submit_files.d2l?ou=472696&db=461738   Ver evento: https://blo",
+   "lugar": null
+  },
+  {
    "fuente": "clases",
    "titulo": "Hacer cosa de riesgo y seguridad física",
    "fecha": "2026-08-12",
@@ -107,6 +127,16 @@
    "horaFin": "16:30",
    "materiaTexto": null,
    "descripcion": null,
+   "lugar": null
+  },
+  {
+   "fuente": "bloqueneon",
+   "titulo": "Genograma",
+   "fecha": "2026-08-12",
+   "hora": "22:00",
+   "horaFin": "22:00",
+   "materiaTexto": "ELEC EMPRESAS DE FAMILIA",
+   "descripcion": "Actividades: Genograma - https://bloqueneon.uniandes.edu.co/d2l/lms/dropbox/user/folder_submit_files.d2l?ou=472696&db=461745   Ver evento: https://bloqueneon.uniandes.edu.co/d2l/le/calendar/472696/event/995590/detailsview?ou=472696#995590",
    "lugar": null
   },
   {
@@ -165,6 +195,16 @@
    "recurrente": true
   },
   {
+   "fuente": "bloqueneon",
+   "titulo": "AM 1. Estado de Situación Financiera",
+   "fecha": "2026-08-13",
+   "hora": "23:59",
+   "horaFin": "23:59",
+   "materiaTexto": "FUNDAMENTOS DE ANALÍTICA FINANCIERA",
+   "descripcion": "Actividades: AM 1. Estado de Situación Financiera   Ver evento: https://bloqueneon.uniandes.edu.co/d2l/le/calendar/475464/event/985620/detailsview?ou=475464#985620",
+   "lugar": null
+  },
+  {
    "fuente": "clases",
    "titulo": "Complementaria y laboratorio física 1",
    "fecha": "2026-08-14",
@@ -218,6 +258,26 @@
    "descripcion": "This is an event reminder",
    "lugar": null,
    "recurrente": true
+  },
+  {
+   "fuente": "bloqueneon",
+   "titulo": "Taller 2",
+   "fecha": "2026-08-14",
+   "hora": "19:00",
+   "horaFin": "19:00",
+   "materiaTexto": "DISEÑO EN INGENIERIA INDUSTRIAL",
+   "descripcion": "Actividades: Taller 2 - https://bloqueneon.uniandes.edu.co/d2l/lms/dropbox/user/folder_submit_files.d2l?ou=475381&db=464755&grpid=502262   Ver evento: https://bloqueneon.uniandes.edu.co/d2l/le/calendar/475381/event/1000032/detailsview?ou=475381#1000032",
+   "lugar": null
+  },
+  {
+   "fuente": "bloqueneon",
+   "titulo": "Actividad Bono: Estado de Situación Financiera",
+   "fecha": "2026-08-14",
+   "hora": "23:59",
+   "horaFin": "23:59",
+   "materiaTexto": "FUNDAMENTOS DE ANALÍTICA FINANCIERA",
+   "descripcion": "Actividades: Actividad Bono: Estado de Situación Financiera   Ver evento: https://bloqueneon.uniandes.edu.co/d2l/le/calendar/475464/event/1001459/detailsview?ou=475464#1001459",
+   "lugar": null
   },
   {
    "fuente": "clases",
@@ -275,6 +335,16 @@
    "recurrente": true
   },
   {
+   "fuente": "bloqueneon",
+   "titulo": "Curso seguridad y Salud",
+   "fecha": "2026-08-19",
+   "hora": "06:30",
+   "horaFin": "06:30",
+   "materiaTexto": "LABORATORIO FÍSICA 1_A3",
+   "descripcion": "Actividades: Curso seguridad y Salud - https://bloqueneon.uniandes.edu.co/d2l/lms/dropbox/user/folder_submit_files.d2l?ou=488606&db=464791   Ver evento: https://bloqueneon.uniandes.edu.co/d2l/le/calendar/488606/event/1000074/detailsview?ou=488606#1000074",
+   "lugar": null
+  },
+  {
    "fuente": "clases",
    "titulo": "Diseño en ingeniería industrial",
    "fecha": "2026-08-19",
@@ -308,6 +378,16 @@
    "recurrente": true
   },
   {
+   "fuente": "bloqueneon",
+   "titulo": "Caso 1: Born too late to lead",
+   "fecha": "2026-08-19",
+   "hora": "12:30",
+   "horaFin": "12:30",
+   "materiaTexto": "ELEC EMPRESAS DE FAMILIA",
+   "descripcion": "En máximo 500 palabras, escriba un resumen del caso que incluya:   Síntesis de los hechos principales (primer párrafo). Los problemas que llevaron al conflicto durante los hechos (ej: falta de comunicación) (segundo párrafo). Sugerencias claras y coherentes para resolver el conflicto (tercer párrafo",
+   "lugar": null
+  },
+  {
    "fuente": "clases",
    "titulo": "Física 1",
    "fecha": "2026-08-20",
@@ -339,6 +419,16 @@
    "descripcion": "This is an event reminder",
    "lugar": null,
    "recurrente": true
+  },
+  {
+   "fuente": "bloqueneon",
+   "titulo": "Actividad Bono: Estado de Resultados Integral (Parte I)",
+   "fecha": "2026-08-20",
+   "hora": "09:30",
+   "horaFin": "09:30",
+   "materiaTexto": "FUNDAMENTOS DE ANALÍTICA FINANCIERA",
+   "descripcion": "Actividades: Actividad Bono: Estado de Resultados Integral (Parte I)   Ver evento: https://bloqueneon.uniandes.edu.co/d2l/le/calendar/475464/event/985629/detailsview?ou=475464#985629",
+   "lugar": null
   },
   {
    "fuente": "clases",
@@ -384,6 +474,16 @@
    "recurrente": true
   },
   {
+   "fuente": "bloqueneon",
+   "titulo": "Tarea Individual 1 - Resumen  Investigación Secundaria",
+   "fecha": "2026-08-21",
+   "hora": "08:00",
+   "horaFin": "08:00",
+   "materiaTexto": "DISEÑO EN INGENIERIA INDUSTRIAL",
+   "descripcion": "Actividades: Tarea Individual 1 - Resumen  Investigación Secundaria - https://bloqueneon.uniandes.edu.co/d2l/lms/dropbox/user/folder_submit_files.d2l?ou=475381&db=461500   Ver evento: https://bloqueneon.uniandes.edu.co/d2l/le/calendar/475381/event/995111/detailsview?ou=475381#995111",
+   "lugar": null
+  },
+  {
    "fuente": "clases",
    "titulo": "Complementaria cálculo integral con ecuaciones diferenciales",
    "fecha": "2026-08-21",
@@ -417,6 +517,16 @@
    "recurrente": true
   },
   {
+   "fuente": "bloqueneon",
+   "titulo": "Caso 2: Spouse Troubles",
+   "fecha": "2026-08-21",
+   "hora": "12:30",
+   "horaFin": "12:30",
+   "materiaTexto": "ELEC EMPRESAS DE FAMILIA",
+   "descripcion": "En máximo 500 palabras, escriba un resumen del caso que incluya:   Síntesis de los hechos principales (primer párrafo). Los problemas que llevaron al conflicto durante los hechos (ej: falta de comunicación) (segundo párrafo). Sugerencias claras y coherentes para resolver el conflicto (tercer párrafo",
+   "lugar": null
+  },
+  {
    "fuente": "clases",
    "titulo": "Flight to Bogotá (LA 4009)",
    "fecha": "2026-08-24",
@@ -438,8 +548,18 @@
    "recurrente": true
   },
   {
+   "fuente": "bloqueneon",
+   "titulo": "Taller 3",
+   "fecha": "2026-08-24",
+   "hora": "21:00",
+   "horaFin": "21:00",
+   "materiaTexto": "DISEÑO EN INGENIERIA INDUSTRIAL",
+   "descripcion": "Actividades: Taller 3 - https://bloqueneon.uniandes.edu.co/d2l/lms/dropbox/user/folder_submit_files.d2l?ou=475381&db=468405   Ver evento: https://bloqueneon.uniandes.edu.co/d2l/le/calendar/475381/event/1005086/detailsview?ou=475381#1005086",
+   "lugar": null
+  },
+  {
    "fuente": "clases",
-   "titulo": "Parcial 1 integral",
+   "titulo": "Parcial 1 física 1",
    "fecha": "2026-08-25",
    "hora": null,
    "horaFin": null,
@@ -449,7 +569,7 @@
   },
   {
    "fuente": "clases",
-   "titulo": "Parcial 1 física 1",
+   "titulo": "Parcial 1 integral",
    "fecha": "2026-08-25",
    "hora": null,
    "horaFin": null,
@@ -545,6 +665,16 @@
    "recurrente": true
   },
   {
+   "fuente": "bloqueneon",
+   "titulo": "Preguntas Caso Space",
+   "fecha": "2026-08-26",
+   "hora": "23:59",
+   "horaFin": "23:59",
+   "materiaTexto": "ELEC EMPRESAS DE FAMILIA",
+   "descripcion": "Actividades: Preguntas Caso Space - https://bloqueneon.uniandes.edu.co/d2l/lms/dropbox/user/folder_submit_files.d2l?ou=472696&db=468927   Ver evento: https://bloqueneon.uniandes.edu.co/d2l/le/calendar/472696/event/1005794/detailsview?ou=472696#1005794",
+   "lugar": null
+  },
+  {
    "fuente": "clases",
    "titulo": "Física 1",
    "fecha": "2026-08-27",
@@ -587,6 +717,26 @@
    "descripcion": "This is an event reminder",
    "lugar": null,
    "recurrente": true
+  },
+  {
+   "fuente": "bloqueneon",
+   "titulo": "Actividad 2. Estado de Resultados Integral",
+   "fecha": "2026-08-27",
+   "hora": "23:59",
+   "horaFin": "23:59",
+   "materiaTexto": "FUNDAMENTOS DE ANALÍTICA FINANCIERA",
+   "descripcion": "Actividades: Actividad 2. Estado de Resultados Integral   Ver evento: https://bloqueneon.uniandes.edu.co/d2l/le/calendar/475464/event/985621/detailsview?ou=475464#985621",
+   "lugar": null
+  },
+  {
+   "fuente": "bloqueneon",
+   "titulo": "Historia de empresas",
+   "fecha": "2026-08-27",
+   "hora": "23:59",
+   "horaFin": "23:59",
+   "materiaTexto": "ELEC EMPRESAS DE FAMILIA",
+   "descripcion": "Escribir una página sobre la historia de la empresa familiar en la cual van a trabajar. Es una actividad grupal para que todos sepan de que trata la empresa. Se les adjunta un documento para que lo revisen y utilicen en la entrega.    Actividades: Historia de empresas - https://bloqueneon.uniandes.e",
+   "lugar": null
   },
   {
    "fuente": "clases",
@@ -644,6 +794,26 @@
    "recurrente": true
   },
   {
+   "fuente": "bloqueneon",
+   "titulo": "Cuestionario Cultura",
+   "fecha": "2026-08-28",
+   "hora": "12:30",
+   "horaFin": "12:30",
+   "materiaTexto": "ELEC EMPRESAS DE FAMILIA",
+   "descripcion": "Actividad grupal. Es importante que llenen los dos documentos en los grupos del proyecto antes de la clase del viernes.   Actividades: Cuestionario Cultura - https://bloqueneon.uniandes.edu.co/d2l/lms/dropbox/user/folder_submit_files.d2l?ou=472696&db=470467&grpid=516733   Ver evento: https://bloquen",
+   "lugar": null
+  },
+  {
+   "fuente": "bloqueneon",
+   "titulo": "Taller página 73",
+   "fecha": "2026-08-28",
+   "hora": "23:59",
+   "horaFin": "23:59",
+   "materiaTexto": "ÁLGEBRA LINEAL 1",
+   "descripcion": "Adjuntar solución en \"solo2 archivo PDF   Actividades: Taller página 73 - https://bloqueneon.uniandes.edu.co/d2l/lms/dropbox/user/folder_submit_files.d2l?ou=476172&db=470818   Ver evento: https://bloqueneon.uniandes.edu.co/d2l/le/calendar/476172/event/1009744/detailsview?ou=476172#1009744",
+   "lugar": null
+  },
+  {
    "fuente": "clases",
    "titulo": "Taller 1 fafi entrega",
    "fecha": "2026-08-30",
@@ -651,6 +821,16 @@
    "horaFin": null,
    "materiaTexto": null,
    "descripcion": "This is an event reminder",
+   "lugar": null
+  },
+  {
+   "fuente": "bloqueneon",
+   "titulo": "Taller 1: Estado de Situación Financiera, Estado de Resultados Integral y Acciones",
+   "fecha": "2026-08-30",
+   "hora": "23:59",
+   "horaFin": "23:59",
+   "materiaTexto": "FUNDAMENTOS DE ANALÍTICA FINANCIERA - UNIFICADO",
+   "descripcion": "Actividades: Taller 1: Estado de Situación Financiera, Estado de Resultados Integral y Acciones   Ver evento: https://bloqueneon.uniandes.edu.co/d2l/le/calendar/486164/event/985383/detailsview?ou=486164#985383",
    "lugar": null
   },
   {
@@ -675,6 +855,26 @@
    "recurrente": true
   },
   {
+   "fuente": "bloqueneon",
+   "titulo": "Entrega 1 Proyecto - Descubrir",
+   "fecha": "2026-08-31",
+   "hora": "21:00",
+   "horaFin": "21:00",
+   "materiaTexto": "DISEÑO EN INGENIERIA INDUSTRIAL",
+   "descripcion": "Actividades: Entrega 1 Proyecto - Descubrir - https://bloqueneon.uniandes.edu.co/d2l/lms/dropbox/user/folder_submit_files.d2l?ou=475381&db=468380&grpid=502262   Ver evento: https://bloqueneon.uniandes.edu.co/d2l/le/calendar/475381/event/1005059/detailsview?ou=475381#1005059",
+   "lugar": null
+  },
+  {
+   "fuente": "bloqueneon",
+   "titulo": "Taller 4",
+   "fecha": "2026-08-31",
+   "hora": "21:00",
+   "horaFin": "21:00",
+   "materiaTexto": "DISEÑO EN INGENIERIA INDUSTRIAL",
+   "descripcion": "Actividades: Taller 4 - https://bloqueneon.uniandes.edu.co/d2l/lms/dropbox/user/folder_submit_files.d2l?ou=475381&db=468381&grpid=502262   Ver evento: https://bloqueneon.uniandes.edu.co/d2l/le/calendar/475381/event/1005060/detailsview?ou=475381#1005060",
+   "lugar": null
+  },
+  {
    "fuente": "clases",
    "titulo": "Física 1",
    "fecha": "2026-09-01",
@@ -717,6 +917,16 @@
    "descripcion": "This is an event reminder",
    "lugar": null,
    "recurrente": true
+  },
+  {
+   "fuente": "bloqueneon",
+   "titulo": "Curso Salida del Campus",
+   "fecha": "2026-09-02",
+   "hora": "07:59",
+   "horaFin": "07:59",
+   "materiaTexto": "DISEÑO EN INGENIERIA INDUSTRIAL",
+   "descripcion": "Envíen una foto como comprobante de que realizaron el curso    Actividades: Curso Salida del Campus - https://bloqueneon.uniandes.edu.co/d2l/lms/dropbox/user/folder_submit_files.d2l?ou=475381&db=467773   Ver evento: https://bloqueneon.uniandes.edu.co/d2l/le/calendar/475381/event/1004110/detailsview?",
+   "lugar": null
   },
   {
    "fuente": "clases",
@@ -796,6 +1006,26 @@
    "recurrente": true
   },
   {
+   "fuente": "bloqueneon",
+   "titulo": "Taller Valores",
+   "fecha": "2026-09-03",
+   "hora": "20:00",
+   "horaFin": "20:00",
+   "materiaTexto": "ELEC EMPRESAS DE FAMILIA",
+   "descripcion": "Actividades: Taller Valores - https://bloqueneon.uniandes.edu.co/d2l/lms/dropbox/user/folder_submit_files.d2l?ou=472696&db=472142   Ver evento: https://bloqueneon.uniandes.edu.co/d2l/le/calendar/472696/event/1012779/detailsview?ou=472696#1012779",
+   "lugar": null
+  },
+  {
+   "fuente": "bloqueneon",
+   "titulo": "Actividad 3. Deterioro de Cartera",
+   "fecha": "2026-09-03",
+   "hora": "23:59",
+   "horaFin": "23:59",
+   "materiaTexto": "FUNDAMENTOS DE ANALÍTICA FINANCIERA",
+   "descripcion": "Actividades: Actividad 3. Deterioro de Cartera   Ver evento: https://bloqueneon.uniandes.edu.co/d2l/le/calendar/475464/event/985636/detailsview?ou=475464#985636",
+   "lugar": null
+  },
+  {
    "fuente": "clases",
    "titulo": "Complementaria y laboratorio física 1",
    "fecha": "2026-09-04",
@@ -849,6 +1079,16 @@
    "descripcion": "This is an event reminder",
    "lugar": null,
    "recurrente": true
+  },
+  {
+   "fuente": "bloqueneon",
+   "titulo": "Caso 3: Goodwin Sporting Goods",
+   "fecha": "2026-09-04",
+   "hora": "12:30",
+   "horaFin": "12:30",
+   "materiaTexto": "ELEC EMPRESAS DE FAMILIA",
+   "descripcion": "En máximo 500 palabras, escriba un resumen del caso que incluya:  Síntesis de los hechos principales (primer párrafo). Los problemas que llevaron al conflicto durante los hechos (ej: falta de comunicación) (segundo párrafo). Sugerencias claras y coherentes para resolver el conflicto (tercer párrafo)",
+   "lugar": null
   },
   {
    "fuente": "clases",
@@ -948,6 +1188,16 @@
    "descripcion": "This is an event reminder",
    "lugar": null,
    "recurrente": true
+  },
+  {
+   "fuente": "bloqueneon",
+   "titulo": "Hoja de Jurado",
+   "fecha": "2026-09-09",
+   "hora": "23:59",
+   "horaFin": "23:59",
+   "materiaTexto": "ELEC EMPRESAS DE FAMILIA",
+   "descripcion": "Actividades: Hoja de Jurado - https://bloqueneon.uniandes.edu.co/d2l/lms/dropbox/user/folder_submit_files.d2l?ou=472696&db=473122   Ver evento: https://bloqueneon.uniandes.edu.co/d2l/le/calendar/472696/event/1014493/detailsview?ou=472696#1014493",
+   "lugar": null
   },
   {
    "fuente": "clases",
@@ -1082,8 +1332,105 @@
   },
   {
    "fuente": "clases",
-   "titulo": "Parcial 2 fisica",
+   "titulo": "Física 1",
    "fecha": "2026-09-15",
+   "hora": "06:30",
+   "horaFin": "07:50",
+   "materiaTexto": null,
+   "descripcion": "This is an event reminder",
+   "lugar": null,
+   "recurrente": true
+  },
+  {
+   "fuente": "clases",
+   "titulo": "Fundamentos de analítica financiera",
+   "fecha": "2026-09-15",
+   "hora": "08:00",
+   "horaFin": "09:20",
+   "materiaTexto": null,
+   "descripcion": "This is an event reminder",
+   "lugar": null,
+   "recurrente": true
+  },
+  {
+   "fuente": "clases",
+   "titulo": "Cálculo integral con ecuaciones diferenciales",
+   "fecha": "2026-09-15",
+   "hora": "09:30",
+   "horaFin": "10:50",
+   "materiaTexto": null,
+   "descripcion": "This is an event reminder",
+   "lugar": null,
+   "recurrente": true
+  },
+  {
+   "fuente": "bloqueneon",
+   "titulo": "Link para Envío de Reclamos - Taller 1: Estado de la Situación Financiera y Estado de Resultados Integral",
+   "fecha": "2026-09-15",
+   "hora": "18:00",
+   "horaFin": "18:00",
+   "materiaTexto": "FUNDAMENTOS DE ANALÍTICA FINANCIERA - UNIFICADO",
+   "descripcion": "Actividades: Link para Envío de Reclamos - Taller 1: Estado de la Situación Financiera y Estado de Resultados Integral - https://bloqueneon.uniandes.edu.co/d2l/lms/dropbox/user/folder_submit_files.d2l?ou=486164&db=455390   Ver evento: https://bloqueneon.uniandes.edu.co/d2l/le/calendar/486164/event/9",
+   "lugar": null
+  },
+  {
+   "fuente": "bloqueneon",
+   "titulo": "Entrega 1: Cultura",
+   "fecha": "2026-09-15",
+   "hora": "23:00",
+   "horaFin": "23:00",
+   "materiaTexto": "ELEC EMPRESAS DE FAMILIA",
+   "descripcion": "Actividades: Entrega 1: Cultura - https://bloqueneon.uniandes.edu.co/d2l/lms/dropbox/user/folder_submit_files.d2l?ou=472696&db=460646   Ver evento: https://bloqueneon.uniandes.edu.co/d2l/le/calendar/472696/event/993613/detailsview?ou=472696#993613",
+   "lugar": null
+  },
+  {
+   "fuente": "clases",
+   "titulo": "Complementaria y laboratorio física 1",
+   "fecha": "2026-09-16",
+   "hora": "06:30",
+   "horaFin": "07:50",
+   "materiaTexto": null,
+   "descripcion": "This is an event reminder",
+   "lugar": null,
+   "recurrente": true
+  },
+  {
+   "fuente": "clases",
+   "titulo": "Diseño en ingeniería industrial",
+   "fecha": "2026-09-16",
+   "hora": "08:00",
+   "horaFin": "09:20",
+   "materiaTexto": null,
+   "descripcion": "This is an event reminder",
+   "lugar": null,
+   "recurrente": true
+  },
+  {
+   "fuente": "clases",
+   "titulo": "Complementaria cálculo integral con ecuaciones diferenciales",
+   "fecha": "2026-09-16",
+   "hora": "10:00",
+   "horaFin": "10:50",
+   "materiaTexto": null,
+   "descripcion": "This is an event reminder",
+   "lugar": null,
+   "recurrente": true
+  },
+  {
+   "fuente": "clases",
+   "titulo": "Electiva Empresas de familia",
+   "fecha": "2026-09-16",
+   "hora": "12:30",
+   "horaFin": "13:50",
+   "materiaTexto": null,
+   "descripcion": "This is an event reminder",
+   "lugar": null,
+   "recurrente": true
+  },
+  {
+   "fuente": "clases",
+   "titulo": "Parcial 2 fisica",
+   "fecha": "2026-09-17",
    "hora": null,
    "horaFin": null,
    "materiaTexto": null,
@@ -1093,83 +1440,6 @@
   {
    "fuente": "clases",
    "titulo": "Física 1",
-   "fecha": "2026-09-15",
-   "hora": "06:30",
-   "horaFin": "07:50",
-   "materiaTexto": null,
-   "descripcion": "This is an event reminder",
-   "lugar": null,
-   "recurrente": true
-  },
-  {
-   "fuente": "clases",
-   "titulo": "Fundamentos de analítica financiera",
-   "fecha": "2026-09-15",
-   "hora": "08:00",
-   "horaFin": "09:20",
-   "materiaTexto": null,
-   "descripcion": "This is an event reminder",
-   "lugar": null,
-   "recurrente": true
-  },
-  {
-   "fuente": "clases",
-   "titulo": "Cálculo integral con ecuaciones diferenciales",
-   "fecha": "2026-09-15",
-   "hora": "09:30",
-   "horaFin": "10:50",
-   "materiaTexto": null,
-   "descripcion": "This is an event reminder",
-   "lugar": null,
-   "recurrente": true
-  },
-  {
-   "fuente": "clases",
-   "titulo": "Complementaria y laboratorio física 1",
-   "fecha": "2026-09-16",
-   "hora": "06:30",
-   "horaFin": "07:50",
-   "materiaTexto": null,
-   "descripcion": "This is an event reminder",
-   "lugar": null,
-   "recurrente": true
-  },
-  {
-   "fuente": "clases",
-   "titulo": "Diseño en ingeniería industrial",
-   "fecha": "2026-09-16",
-   "hora": "08:00",
-   "horaFin": "09:20",
-   "materiaTexto": null,
-   "descripcion": "This is an event reminder",
-   "lugar": null,
-   "recurrente": true
-  },
-  {
-   "fuente": "clases",
-   "titulo": "Complementaria cálculo integral con ecuaciones diferenciales",
-   "fecha": "2026-09-16",
-   "hora": "10:00",
-   "horaFin": "10:50",
-   "materiaTexto": null,
-   "descripcion": "This is an event reminder",
-   "lugar": null,
-   "recurrente": true
-  },
-  {
-   "fuente": "clases",
-   "titulo": "Electiva Empresas de familia",
-   "fecha": "2026-09-16",
-   "hora": "12:30",
-   "horaFin": "13:50",
-   "materiaTexto": null,
-   "descripcion": "This is an event reminder",
-   "lugar": null,
-   "recurrente": true
-  },
-  {
-   "fuente": "clases",
-   "titulo": "Física 1",
    "fecha": "2026-09-17",
    "hora": "06:30",
    "horaFin": "07:50",
@@ -1265,6 +1535,16 @@
    "descripcion": "This is an event reminder",
    "lugar": null,
    "recurrente": true
+  },
+  {
+   "fuente": "clases",
+   "titulo": "Taller 2 fafi entrega",
+   "fecha": "2026-09-20",
+   "hora": null,
+   "horaFin": null,
+   "materiaTexto": null,
+   "descripcion": "This is an event reminder",
+   "lugar": null
   },
   {
    "fuente": "clases",
@@ -1278,13 +1558,13 @@
    "recurrente": true
   },
   {
-   "fuente": "clases",
-   "titulo": "Taller 2 fafi entrega",
+   "fuente": "bloqueneon",
+   "titulo": "Taller 2: Activos No Corrientes, Deterioro de Cartera, Cuentas Creadas para los Ajustes y Acciones",
    "fecha": "2026-09-20",
-   "hora": null,
-   "horaFin": null,
-   "materiaTexto": null,
-   "descripcion": "This is an event reminder",
+   "hora": "23:59",
+   "horaFin": "23:59",
+   "materiaTexto": "FUNDAMENTOS DE ANALÍTICA FINANCIERA - UNIFICADO",
+   "descripcion": "Actividades: Taller 2: Activos No Corrientes, Deterioro de Cartera, Cuentas Creadas para los Ajustes y Acciones - https://bloqueneon.uniandes.edu.co/d2l/lms/dropbox/user/folder_submit_files.d2l?ou=486164&db=455395   Ver evento: https://bloqueneon.uniandes.edu.co/d2l/le/calendar/486164/event/985388/d",
    "lugar": null
   },
   {
@@ -1340,6 +1620,16 @@
    "descripcion": "This is an event reminder",
    "lugar": null,
    "recurrente": true
+  },
+  {
+   "fuente": "bloqueneon",
+   "titulo": "Caso 4: Colpatria",
+   "fecha": "2026-09-22",
+   "hora": "23:59",
+   "horaFin": "23:59",
+   "materiaTexto": "ELEC EMPRESAS DE FAMILIA",
+   "descripcion": "En máximo 500 palabras, escriba un resumen del caso que incluya:  Síntesis de los hechos principales (primer párrafo). Los problemas que llevaron al conflicto durante los hechos (ej: falta de comunicación) (segundo párrafo). Sugerencias claras y coherentes para resolver el conflicto (tercer párrafo)",
+   "lugar": null
   },
   {
    "fuente": "clases",
@@ -1680,6 +1970,16 @@
    "recurrente": true
   },
   {
+   "fuente": "bloqueneon",
+   "titulo": "Segunda entrega: Propiedad",
+   "fecha": "2026-10-02",
+   "hora": "08:00",
+   "horaFin": "08:00",
+   "materiaTexto": "ELEC EMPRESAS DE FAMILIA",
+   "descripcion": "Actividades: Segunda entrega: Propiedad - https://bloqueneon.uniandes.edu.co/d2l/lms/dropbox/user/folder_submit_files.d2l?ou=472696&db=460674   Ver evento: https://bloqueneon.uniandes.edu.co/d2l/le/calendar/472696/event/993660/detailsview?ou=472696#993660",
+   "lugar": null
+  },
+  {
    "fuente": "clases",
    "titulo": "Complementaria cálculo integral con ecuaciones diferenciales",
    "fecha": "2026-10-02",
@@ -1989,7 +2289,7 @@
   },
   {
    "fuente": "clases",
-   "titulo": "Parcial 2 Algebra lineal!!!!",
+   "titulo": "Parcial 3 fisica",
    "fecha": "2026-10-15",
    "hora": null,
    "horaFin": null,
@@ -1999,7 +2299,7 @@
   },
   {
    "fuente": "clases",
-   "titulo": "Parcial 3 fisica",
+   "titulo": "Parcial 2 Algebra lineal!!!!",
    "fecha": "2026-10-15",
    "hora": null,
    "horaFin": null,
@@ -2237,6 +2537,16 @@
    "descripcion": "This is an event reminder",
    "lugar": null,
    "recurrente": true
+  },
+  {
+   "fuente": "bloqueneon",
+   "titulo": "Caso 5: Carvajal",
+   "fecha": "2026-10-22",
+   "hora": "23:59",
+   "horaFin": "23:59",
+   "materiaTexto": "ELEC EMPRESAS DE FAMILIA",
+   "descripcion": "En máximo 500 palabras, escriba un resumen del caso que incluya:  Síntesis de los hechos principales (primer párrafo). Los problemas que llevaron al conflicto durante los hechos (ej: falta de comunicación) (segundo párrafo). Sugerencias claras y coherentes para resolver el conflicto (tercer párrafo)",
+   "lugar": null
   },
   {
    "fuente": "clases",
@@ -2577,6 +2887,16 @@
    "recurrente": true
   },
   {
+   "fuente": "bloqueneon",
+   "titulo": "Tercera entrega: Gobierno",
+   "fecha": "2026-11-04",
+   "hora": "08:00",
+   "horaFin": "08:00",
+   "materiaTexto": "ELEC EMPRESAS DE FAMILIA",
+   "descripcion": "Actividades: Tercera entrega: Gobierno - https://bloqueneon.uniandes.edu.co/d2l/lms/dropbox/user/folder_submit_files.d2l?ou=472696&db=460720   Ver evento: https://bloqueneon.uniandes.edu.co/d2l/le/calendar/472696/event/993882/detailsview?ou=472696#993882",
+   "lugar": null
+  },
+  {
    "fuente": "clases",
    "titulo": "Complementaria cálculo integral con ecuaciones diferenciales",
    "fecha": "2026-11-04",
@@ -2760,6 +3080,16 @@
    "descripcion": "This is an event reminder",
    "lugar": null,
    "recurrente": true
+  },
+  {
+   "fuente": "bloqueneon",
+   "titulo": "Caso 6: Babbitt Ranches",
+   "fecha": "2026-11-10",
+   "hora": "23:59",
+   "horaFin": "23:59",
+   "materiaTexto": "ELEC EMPRESAS DE FAMILIA",
+   "descripcion": "En máximo 500 palabras, escriba un resumen del caso que incluya:   Síntesis de los hechos principales (primer párrafo). Los problemas que llevaron al conflicto durante los hechos (ej: falta de comunicación) (segundo párrafo). Sugerencias claras y coherentes para resolver el conflicto (tercer párrafo",
+   "lugar": null
   },
   {
    "fuente": "clases",
@@ -3069,6 +3399,16 @@
    "recurrente": true
   },
   {
+   "fuente": "bloqueneon",
+   "titulo": "Cuarta entrega: Sucesión",
+   "fecha": "2026-11-20",
+   "hora": "08:00",
+   "horaFin": "08:00",
+   "materiaTexto": "ELEC EMPRESAS DE FAMILIA",
+   "descripcion": "Actividades: Cuarta entrega: Sucesión - https://bloqueneon.uniandes.edu.co/d2l/lms/dropbox/user/folder_submit_files.d2l?ou=472696&db=460754   Ver evento: https://bloqueneon.uniandes.edu.co/d2l/le/calendar/472696/event/993903/detailsview?ou=472696#993903",
+   "lugar": null
+  },
+  {
    "fuente": "clases",
    "titulo": "Complementaria cálculo integral con ecuaciones diferenciales",
    "fecha": "2026-11-20",
@@ -3144,6 +3484,16 @@
    "descripcion": "This is an event reminder",
    "lugar": null,
    "recurrente": true
+  },
+  {
+   "fuente": "bloqueneon",
+   "titulo": "Entrega final",
+   "fecha": "2026-11-24",
+   "hora": "21:00",
+   "horaFin": "21:00",
+   "materiaTexto": "ELEC EMPRESAS DE FAMILIA",
+   "descripcion": "Actividades: Entrega final - https://bloqueneon.uniandes.edu.co/d2l/lms/dropbox/user/folder_submit_files.d2l?ou=472696&db=460760   Ver evento: https://bloqueneon.uniandes.edu.co/d2l/le/calendar/472696/event/993933/detailsview?ou=472696#993933",
+   "lugar": null
   },
   {
    "fuente": "clases",
@@ -3311,17 +3661,13 @@
   }
  ],
  "fuentes": {
-  "notion": {
-   "ok": false,
-   "error": "Faltan los secretos NOTION_TOKEN o NOTION_DB_ID."
-  },
   "clases": {
    "ok": true,
    "total": 303
   },
   "bloqueneon": {
-   "ok": false,
-   "error": "Falta el secreto BLOQUENEON_ICS_URL."
+   "ok": true,
+   "total": 35
   }
  }
 }

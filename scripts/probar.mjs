@@ -1,6 +1,6 @@
-// Pruebas de las piezas delicadas: el parser de iCal, la detección del esquema
-// de Notion y el cálculo de notas.  Correr con:  node scripts/probar.mjs
-import { parsearICS, detectarCampos, desescapar, parsearRRULE, fechasDeRepeticion, expandirEventos } from "./sincronizar.mjs";
+// Pruebas de las piezas delicadas: el parser de iCal, la expansión de
+// repeticiones y el cálculo de notas.  Correr con:  node scripts/probar.mjs
+import { parsearICS, desescapar, parsearRRULE, fechasDeRepeticion, expandirEventos, soloEntregas } from "./sincronizar.mjs";
 import { resumenMateria } from "../calculo.js";
 
 let fallos = 0;
@@ -43,25 +43,23 @@ igual("desescapa el punto y coma", ev[1].descripcion, "Sección 3; grupo B");
 igual("iCal vacío no revienta", parsearICS("BEGIN:VCALENDAR\r\nEND:VCALENDAR").length, 0);
 igual("basura no revienta", parsearICS("no soy un calendario").length, 0);
 
-/* ── Esquema de Notion ────────────────────────────────────────────────── */
-console.log("\nEsquema de Notion");
+/* ── Bloque Neón: solo las entregas ───────────────────────────────────── */
+console.log("\nBloque Neón");
 
-igual("detecta por nombre", detectarCampos({
-  "Nombre":  { type: "title" },
-  "Creado":  { type: "date" },
-  "Fecha":   { type: "date" },
-  "Materia": { type: "select" },
-  "Tipo":    { type: "select" },
-  "Estado":  { type: "status" },
-}), { fecha: "Fecha", titulo: "Nombre", materia: "Materia", tipo: "Tipo", estado: "Estado", lugar: null });
+const brutosNeon = [
+  { titulo: "Entrega 1: Cultura - Vencimiento", lugar: "ELEC EMPRESAS DE FAMILIA", fecha: "2026-09-16" },
+  { titulo: "Taller 1 - Rúbrica - Disponible", lugar: "FUNDAMENTOS DE ANALÍTICA FINANCIERA", fecha: "2026-08-18" },
+  { titulo: "Parcial 1 - La disponibilidad finaliza", lugar: "PRECÁLCULO", fecha: "2026-09-01" },
+];
+const entregasNeon = soloEntregas(brutosNeon);
 
-// Sin nombres reconocibles, cae en la primera propiedad de cada tipo.
-igual("cae en la primera si no reconoce", detectarCampos({
-  "Título": { type: "title" },
-  "Cuándo": { type: "date" },
-}), { fecha: "Cuándo", titulo: "Título", materia: null, tipo: null, estado: null, lugar: null });
-
-igual("sin fecha devuelve null", detectarCampos({ "T": { type: "title" } }).fecha, null);
+igual("descarta lo que no es entrega", entregasNeon.length, 1);
+igual("le quita el sufijo al título", entregasNeon[0].titulo, "Entrega 1: Cultura");
+igual("el curso pasa a materiaTexto", entregasNeon[0].materiaTexto, "ELEC EMPRESAS DE FAMILIA");
+igual("el curso no queda como salón", entregasNeon[0].lugar, null);
+igual("no pierde la fecha", entregasNeon[0].fecha, "2026-09-16");
+igual("lista vacía no revienta", soloEntregas([]).length, 0);
+igual("evento sin título no revienta", soloEntregas([{ fecha: "2026-01-01" }]).length, 0);
 
 /* ── Cálculo de notas ─────────────────────────────────────────────────── */
 console.log("\nCálculo de notas");
